@@ -8,7 +8,8 @@
     {
       "@id": "https://repolex.ai/r/florimondmanca/asgi-lifespan/commit/8591cb106849c73e3080e6c689e8c22b70fd863f",
       "git:hexsha": "8591cb106849c73e3080e6c689e8c22b70fd863f",
-      "repolex:parseStatus": "ast_complete"
+      "repolex:parseStatus": "parsed",
+      "repolex:parsedAt": "2026-10-20T22:04:36.931285+00:00"
     },
     {
       "@id": "https://repolex.ai/r/florimondmanca/asgi-lifespan/commit/dd5ef11082ddb09ff49bba85f1072ddc73e89c49",
