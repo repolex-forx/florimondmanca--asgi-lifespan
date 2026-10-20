@@ -1,1 +1,104 @@
-Initializing
+# Repolex Knowledge Graph of florimondmanca/asgi-lifespan
+
+RDF knowledge graph data for [florimondmanca/asgi-lifespan](https://github.com/florimondmanca/asgi-lifespan), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download florimondmanca/asgi-lifespan
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 8591cb106849c73e3080e6c689e8c22b70fd863f
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 8591cb106849c73e3080e6c689e8c22b70fd863f
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 20efefa709f13c36ed31332e283471b8474ad574.nq.gz
+│   ├── 22ea37ac692ffa5a130a4b60c383041d4e61bb0f.nq.gz
+│   ├── 25c0046c3ca5ca68ad85c71db89e7d8bf3da2a7b.nq.gz
+│   ├── 405f33e98e0e5cfd13d7acd8a88dd467687779a5.nq.gz
+│   ├── 41ed33bf71f7e1ec48d44cb40ed3919a9fd70947.nq.gz
+│   ├── 50d545ad0aed275935723f59e6dd4c24dd1cc16a.nq.gz
+│   ├── 5580482f3fefe5620609489b3e1682dddde5cdbc.nq.gz
+│   ├── 6d53e27b2d24280103719ca7274476f27fefde42.nq.gz
+│   ├── 6efdd416d2b9ea1136c40cfa887edfe4c1db9694.nq.gz
+│   ├── 71f3bc337e25aeea46dba7c2a0dbb9757aa6fc38.nq.gz
+│   ├── 7e2a8e70f94ab6cf8bb5ba2abe35a35aef007389.nq.gz
+│   ├── 93716c9599b65681df6c636b9b7df8047b9b8ae4.nq.gz
+│   ├── a1c254821eda84f0f3b3777071e8725b6a9c88e6.nq.gz
+│   ├── be5ef6019230cdbd35abea5027bd735f11be4562.nq.gz
+│   ├── c51baf8e03fbf66af258395af21fc6b940f1833d.nq.gz
+│   ├── cbf498051c6a0aa7aaa9bb6b029483dd236eddd4.nq.gz
+│   ├── ce250f99f41c98498bdf7894d1d2736b7b65adcf.nq.gz
+│   ├── d4e4e2e90952563e8a050052c036c50c6b42715d.nq.gz
+│   ├── dd671329a2f843460bc7b67412b50d939c9b0591.nq.gz
+│   ├── dee9f9a879eb30aed7f127ba17c2a4011491e0ad.nq.gz
+│   ├── e3070cd51aa943c3673b102026069aeba1899700.nq.gz
+│   ├── e49a652dfe904a5bbf80b042ecd2e82171297fff.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── f0b04150968e30208c7b5591ba23202e46432ae6.nq.gz
+│   └── f1c865bd71796d7c20a1b4637ab07acba82f1e72.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 8591cb106849c73e3080e6c689e8c22b70fd863f.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 33 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[florimondmanca/asgi-lifespan](https://github.com/florimondmanca/asgi-lifespan)
+
+---
+*Parsed on 2026-10-20 by [repolex](https://repolex.ai)*

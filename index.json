@@ -1,0 +1,11 @@
+{
+  "org": "florimondmanca",
+  "repo": "asgi-lifespan",
+  "versions": [
+    {
+      "commit": "8591cb106849c73e3080e6c689e8c22b70fd863f",
+      "tag": "",
+      "parsed_at": "2026-10-20T22:04:37.072612+00:00"
+    }
+  ]
+}
